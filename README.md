@@ -21,6 +21,13 @@ Request HTTP → API Controller
                   ↓
              Database
 
+Technology Stack
+
+Entity Framework Core: ORM for database operations
+ASP.NET Core OpenAPI: API documentation 
+Dependency Injection: Built-in DI container in .NET
+AutoMapper: Mapper between DTOs and Entities
+
 # Pre-requisitos
 .NET 8.0
 SQL Server
@@ -28,35 +35,28 @@ Visual Studio 2022 o VS Code
 
 # Configuración Inicial
 
-- Clonar el repositorio:
+- Clone the repository:
 
 git clone https://git.number8.com/erick.Ramirez/net-assessment.git
 cd employee-management
 
-- Restaurar las dependencias:
+- Restore dependencies:
 
 dotnet restore
 
-- Actualizar la base de datos:
-
-cd src/EmployeeManagement.API
-dotnet ef database update
-
-- Ejecutar la aplicación:
+- Run the application:
 
 dotnet run
 
-# Tecnologías Utilizadas
+# Technology Stack
 
-ASP.NET Core 7/8
+ASP.NET Core 8
 Entity Framework Core
 SQL Server
 AutoMapper
-xUnit (para pruebas)
 
-# Características
+# Features
 
-CRUD completo de empleados
-Gestión de departamentos
-API REST
-Autenticación mediante API Key
+CRUD for employees
+Department management
+REST API
