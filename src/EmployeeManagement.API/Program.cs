@@ -2,11 +2,15 @@ using EmployeeManagement.Infrastructure.Data;
 using EmployeeManagement.Core.Interfaces;
 using EmployeeManagement.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using EmployeeManagement.Application.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

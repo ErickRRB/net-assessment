@@ -6,18 +6,23 @@ namespace EmployeeManagement.Infrastructure.Repositories
 {
     public class DepartmentRepository : IDepartmentRepository
     {
-        //Add DI to receive the context of the database
-        private readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext _context;
 
         public DepartmentRepository(ApplicationDbContext context)
         {
-            this.context = context;
+            _context = context;
         }
-        
-        //Get all departments
+
         public List<Department> GetAll()
         {
-            return this.context.Departments.ToList();
+            return _context.Departments.ToList();
+        }
+
+        public Department Add(Department department)
+        {
+            _context.Departments.Add(department);
+            _context.SaveChanges();
+            return department;
         }
     }
 }

@@ -7,5 +7,6 @@ namespace EmployeeManagement.Core.Interfaces
     public interface IDepartmentRepository
     {
         List<Department> GetAll();
+        Department Add(Department department);
     }
 }
