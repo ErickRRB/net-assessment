@@ -6,6 +6,10 @@ namespace EmployeeManagement.Core.Interfaces
 {
     public interface IEmployeeRepository
     {
-
+        Employee? GetById(int id);
+        List<Employee> GetAll();
+        Employee Add(Employee employee);
+        void Update(Employee employee);
+        void Delete(int id);
     }
 }
