@@ -17,7 +17,7 @@ namespace EmployeeManagement.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configurar la relacion entre Employee y Department
+            // Configure the relationship between Employee and Department
             modelBuilder.Entity<Employee>()
                 .HasOne(e => e.Department)
                 .WithMany()

@@ -7,17 +7,17 @@ namespace EmployeeManagement.Application.Mappings
     public class MappingProfile : Profile
     {
         /// <summary>
-        /// Perfil de AutoMapper que define las reglas de mapeo entre DTOs y Entidades.
+        /// Profile for AutoMapper
         /// 
-        /// - Define como convertir objetos entre diferentes tipos (DTOs -> Entidades)
-        /// - Permite transformaciones automaticas de datos
-        /// - Evita escribir codigo repetitivo de mapeo manual
+        /// - Define how to convert objects between different types (DTOs -> Entities)
+        /// - Allows automatic data transformations
+        /// - Avoids writing repetitive manual mapping code
         /// 
-        /// 1. CreateMap<Origen, Destino>() define una regla de conversion
-        /// 2. El mapper automaticamente mapea propiedades con el mismo nombre
-        /// 3. ForMember() permite personalizar el mapeo de propiedades especificas
+        /// 1. CreateMap<Origen, Destino>() defines a conversion rule
+        /// 2. The mapper automatically maps properties with the same name
+        /// 3. ForMember() allows customizing the mapping of specific properties
         /// 
-        /// Ejemplo:
+        /// Example:
         /// var employeeDto = _mapper.Map<EmployeeDto>(employee);
         /// var employee = _mapper.Map<Employee>(createEmployeeDto);
         /// </summary>
@@ -25,16 +25,16 @@ namespace EmployeeManagement.Application.Mappings
         {
             CreateMap<CreateEmployeeDto, Employee>();
             CreateMap<Employee, EmployeeDto>()
-                .ForMember(dest => dest.DepartmentName,  // Para la propiedad DepartmentName del DTO
-                    opt => opt.MapFrom(src =>            // Toma el valor de
-                        src.Department != null ?          // Si Department no es null
-                        src.Department.Name :             // Usa el nombre del departamento
-                        string.Empty));                   // Si no, usa string vacio
+                .ForMember(dest => dest.DepartmentName,  // For the DepartmentName property of the DTO
+                    opt => opt.MapFrom(src =>            // Takes the value from
+                        src.Department != null ?          // If Department is not null
+                        src.Department.Name :             // Use the department name
+                        string.Empty));                   // If not, use an empty string
 
-            // Se usa cuando: GET /api/employees para mostrar empleados
-            // Ejemplo:
-            // De: Employee { Department = { Name = "IT" } }
-            // A: { "departmentName": "IT" }
+            // Used when: GET /api/employees to display employees
+            // Example:
+            // From: Employee { Department = { Name = "IT" } }
+            // To: { "departmentName": "IT" }
 
             CreateMap<CreateDepartmentDto, Department>();
             CreateMap<Department, DepartmentDto>();
