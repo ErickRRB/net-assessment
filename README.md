@@ -1,7 +1,7 @@
 # EmployeeManagement
 
 # Project Struccture:
-
+```
 EmployeeManagement/
 ├── src/
 │   ├── EmployeeManagement.API/          # REST API Presentation Layer (Controllers, Models, etc.)
@@ -11,34 +11,29 @@ EmployeeManagement/
 └── tests/
     ├── EmployeeManagement.UnitTests/
     └── EmployeeManagement.IntegrationTests/
-
-
-Request HTTP → API Controller 
-                  ↓
-             Application Service
-                  ↓
-             Repository (Infrastructure)
-                  ↓
-             Database
-
+```
+```
+Request HTTP -> API Controller -> Application Service -> Repository -> Database
+```
 # Technology Stack
 
 Entity Framework Core: ORM for database operations
-ASP.NET Core OpenAPI: API documentation 
-Dependency Injection: Built-in DI container in .NET
-AutoMapper: Mapper between DTOs and Entities
+ASP.NET Core 8: Backend framework
+SQL Server: Database
+AutoMapper: Object-Object mapping
+Swagger: API documentation
+
 
 # Pre-requisites
-.NET 8.0
-SQL Server
-Visual Studio 2022 o VS Code
+- .NET 8.0
+- SQL Server
+- Visual Studio 2022 o VS Code
 
 # Initial Configuration
 
 - Clone the repository:
 
 git clone https://git.number8.com/erick.Ramirez/net-assessment.git
-cd employee-management
 
 - Restore dependencies:
 
